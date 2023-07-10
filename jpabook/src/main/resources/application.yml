@@ -1,0 +1,21 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/jpabook?serverTimezone=Asia/Seoul
+    username: jpa
+    password: jpa
+
+  mvc:
+    view:
+      suffix: .html
+
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: create  # ??? ?? ??
+      show-sql: true      # SQL ?? ??
+    properties:
+      hibernate:
+        format_sql: true  # SQL pretty print

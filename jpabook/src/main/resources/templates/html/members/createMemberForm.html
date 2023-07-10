@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<th:block th:replace="/html/fragments/head :: headerFragment"></th:block>
+<body>
+
+<div class="container">
+
+    <th:block th:replace="/html/fragments/bodyHeader :: bodyHeaderFragment"></th:block>
+
+    <form role="form" action="/members/new" method="post">
+        <div class="form-group">
+            <label for="inputName">이름</label>
+            <input type="text" name="name" class="form-control" id="inputName" placeholder="이름을 입력하세요">
+        </div>
+        <div class="form-group">
+            <label for="city">도시</label>
+            <input type="text" name="city" class="form-control" id="city" placeholder="도시를 입력하세요">
+        </div>
+        <div class="form-group">
+            <label for="street">거리</label>
+            <input type="text" name="street" class="form-control" id="street" placeholder="거리를 입력하세요">
+        </div>
+        <div class="form-group">
+            <label for="zipcode">우편번호</label>
+            <input type="text" name="zipcode" class="form-control" id="zipcode" placeholder="우편번호를 입력하세요">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <br/>
+    <th:block th:replace="/html/fragments/footer :: footerFragment"></th:block>
+</div> <!-- /container -->
+
+</body>
+</html>
