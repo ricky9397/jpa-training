@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="UTF-8">
+<html lang="UTF-8" xmlns:th="">
 <th:block th:replace="/html/fragments/head :: headerFragment"></th:block>
 <body>
 
@@ -13,9 +13,7 @@
             <label for="member">주문회원</label>
             <select name="memberId" id="member" class="form-control">
                 <option value="">회원선택</option>
-                <c:forEach var="member" items="${members}">
-                    <option value="${member.id}">${member.name}</option>
-                </c:forEach>
+                <option th:each="member : ${members}" th:value="${member?.Id}" th:utext="${member?.name}"></option>
             </select>
         </div>
 
@@ -23,9 +21,7 @@
             <label for="item">상품명</label>
             <select name="itemId" id="item" class="form-control">
                 <option value="">상품선택</option>
-                <c:forEach var="item" items="${items}">
-                    <option value="${item.id}">${item.name}</option>
-                </c:forEach>
+                <option th:each="item : ${items}" th:value="${item?.Id}" th:utext="${item?.name}"></option>
             </select>
         </div>
 

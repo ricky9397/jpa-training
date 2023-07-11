@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="UTF-8">
+<html lang="UTF-8" xmlns:th="">
 <th:block th:replace="/html/fragments/head :: headerFragment"></th:block>
 <body>
 
@@ -18,17 +18,15 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${items}" var="item">
-                <tr>
-                    <td>${item.id}</td>
-                    <td>${item.name}</td>
-                    <td>${item.price}</td>
-                    <td>${item.stockQuantity}</td>
+                <tr th:each="item : ${items}">
+                    <td th:text="${item.id}"></td>
+                    <td th:text="${item.name}"></td>
+                    <td th:text="${item.price}"></td>
+                    <td th:text="${item.stockQuantity}"></td>
                     <td>
-                        <a href="/items/${item.id}/edit" class="btn btn-primary" role="button">수정</a>
+                        <a th:href="@{/items/{itemId}/edit(itemId = ${item.id})}" class="btn btn-primary" role="button">수정</a>
                     </td>
                 </tr>
-            </c:forEach>
             </tbody>
         </table>
     </div>

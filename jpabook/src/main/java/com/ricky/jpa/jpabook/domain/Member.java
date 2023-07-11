@@ -12,7 +12,6 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-@Builder
 @Entity
 @Table(name = "TB_MEMBER")
 public class Member {
@@ -28,6 +27,10 @@ public class Member {
     private Address address;
 
     @OneToMany(mappedBy = "member")
-    private List<Order> oders = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>();
+
+    public List<Order> getOrders() {
+        return orders;
+    }
 
 }
